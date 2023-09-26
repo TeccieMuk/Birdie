@@ -84,11 +84,14 @@
     <ClCompile Include="source\objects\SkyBox.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="header\behavior\FollowBehavior.h">
+    <ClCompile Include="header\behaviors\FollowBehavior.h">
       <Filter>Header Files\Behaviors</Filter>
     </ClCompile>
     <ClCompile Include="..\GLAD\src\glad.c">
       <Filter>Source Files\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="source\behaviors\FollowBehavior.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +133,9 @@
     </ClInclude>
     <ClInclude Include="header\objects\SkyBox.h">
       <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="header\behaviors\BehaviorTarget.h">
+      <Filter>Header Files\Behaviors</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

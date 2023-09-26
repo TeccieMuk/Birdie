@@ -144,9 +144,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\GLAD\src\glad.c" />
+    <ClCompile Include="source\behaviors\FollowBehavior.cpp" />
     <ClCompile Include="source\objects\bird.cpp" />
     <ClCompile Include="source\logic\Brain.cpp" />
-    <ClCompile Include="header\behavior\FollowBehavior.h">
+    <ClCompile Include="header\behaviors\FollowBehavior.h">
       <FileType>CppHeader</FileType>
     </ClCompile>
     <ClCompile Include="source\utility\KeyboardHandler.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="source\libraries\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="header\behaviors\BehaviorTarget.h" />
     <ClInclude Include="header\objects\bird.h" />
     <ClInclude Include="header\logic\Brain.h" />
     <ClInclude Include="header\camera\Camera.h" />

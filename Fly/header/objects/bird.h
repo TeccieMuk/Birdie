@@ -5,8 +5,9 @@
 #include "camera/Camera.h"
 #include "logic/ThinkThing.h"
 #include "objects/Object.h"
+#include "behaviors/BehaviorTarget.h"
 
-class Bird : public ThinkThing, public Object
+class Bird : public ThinkThing, public Object, public BehaviorTarget
 {
 public:
 	Bird(glm::vec3 position, glm::vec3 direction);
@@ -22,9 +23,11 @@ public:
 		glm::vec3 lightColor);
 
 public:
-	glm::vec3 destination = glm::vec3(0, 2, 0);
+	glm::vec3 getDestination() { return destination; }
+	void setDestination(glm::vec3 destination) override { this->destination = destination; }
 
 private:
+	glm::vec3 destination = glm::vec3(0, 2, 0);
 	unsigned int vbo;
 	unsigned int vao;
 	unsigned int ebo;

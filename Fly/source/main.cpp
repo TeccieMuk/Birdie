@@ -13,6 +13,7 @@
 #include "camera/MouseCamera.h"
 #include "objects/Sea.h"
 #include "objects/SkyBox.h"
+#include <behaviors/FollowBehavior.h>
 using namespace std;
 
 
@@ -36,6 +37,8 @@ KeyboardHandler* keyboardHandler = new KeyboardHandler();
 MouseHandler* mouseHandler = new MouseHandler();
 Sea* sea;
 SkyBox* skyBox;
+MouseCamera* mouseCamera;
+Follow3rdPersonCamera* followCamera;
 
 int main()
 {
@@ -79,15 +82,22 @@ int main()
 	//---------------------------------
 	Bird bird = Bird(glm::vec3(0, 2, 0), glm::vec3(1, 0, 0));
 	Bird bird2 = Bird(glm::vec3(0, 2, 0), glm::vec3(1, 0, 0));
+	Bird bird3 = Bird(glm::vec3(5, 2, 5), glm::vec3(1, 0, 0));
+
+	FollowBehavior* followBehavior = new FollowBehavior();
+	followBehavior->setBehaviorTarget(&bird3);
+	followBehavior->setFollowTarget(&bird2);
 	Brain* brain = new Brain();
 	brain->addThinkThing(&bird);
+	brain->addThinkThing(followBehavior);
 	sea = new Sea();
 	skyBox = new SkyBox();
 
 	// Camera
 	//---------------------------------
-	//camera = new MouseCamera(*keyboardHandler, *mouseHandler);
-	camera = new Follow3rdPersonCamera(bird);
+	mouseCamera = new MouseCamera(*keyboardHandler, *mouseHandler);
+	followCamera = new Follow3rdPersonCamera(bird);
+	camera = followCamera;
 
 	// Main loop
 	//---------------------------------	
@@ -108,7 +118,8 @@ int main()
 
 		// Action
 		bird.tick(currentFrame, deltaTime);
-		bird2.setPosition(bird.destination);
+		bird2.setPosition(bird.getDestination());
+		bird3.tick(currentFrame, deltaTime);
 
 		// Camera
 		glm::mat4 view = camera->getView(currentFrame, deltaTime);
@@ -116,6 +127,7 @@ int main()
 		sea->render(currentFrame, view, projection, *camera, lightPos, lightColor);
 		bird.render(currentFrame, view, projection, *camera, lightPos, lightColor);
 		bird2.render(currentFrame, view, projection, *camera, lightPos, lightColor);
+		bird3.render(currentFrame, view, projection, *camera, lightPos, lightColor);
 
 		// GLFW buffers and IO
 		glfwSwapBuffers(window);
@@ -124,10 +136,12 @@ int main()
 
 	glfwTerminate();
 	delete brain;
-	delete camera;
+	delete mouseCamera;
+	delete followCamera;
 	delete keyboardHandler;
 	delete sea;
 	delete skyBox;
+	delete followBehavior;
 	return 0;
 }
 
@@ -140,6 +154,19 @@ void processInput(GLFWwindow* window)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
+
+	if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS)
+	{
+		if (camera == mouseCamera)
+		{
+			camera = followCamera;
+		}
+		else
+		{
+			camera = mouseCamera;
+		}
+	}
+
 	keyboardHandler->handleKeyboard(window, deltaTime);
 }
 
