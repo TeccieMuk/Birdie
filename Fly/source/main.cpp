@@ -14,6 +14,7 @@
 #include "objects/Sea.h"
 #include "objects/SkyBox.h"
 #include <behaviors/FollowBehavior.h>
+#include <behaviors/GoToRandomPointBehavior.h>
 using namespace std;
 
 
@@ -80,16 +81,21 @@ int main()
 
 	// Objects
 	//---------------------------------
+	Brain* brain = new Brain();
 	Bird bird = Bird(glm::vec3(0, 2, 0), glm::vec3(1, 0, 0));
 	Bird bird2 = Bird(glm::vec3(0, 2, 0), glm::vec3(1, 0, 0));
 	Bird bird3 = Bird(glm::vec3(5, 2, 5), glm::vec3(1, 0, 0));
 
 	FollowBehavior* followBehavior = new FollowBehavior();
 	followBehavior->setBehaviorTarget(&bird3);
-	followBehavior->setFollowTarget(&bird2);
-	Brain* brain = new Brain();
-	brain->addThinkThing(&bird);
+	followBehavior->setFollowTarget(&bird);
+	followBehavior->setOffset(glm::vec3(0.0f, 0, 0.0f));
 	brain->addThinkThing(followBehavior);
+
+	GoToRandomPointBehavior* randomBehavior = new GoToRandomPointBehavior();
+	randomBehavior->setBehaviorTarget(&bird);
+	brain->addThinkThing(randomBehavior);
+	
 	sea = new Sea();
 	skyBox = new SkyBox();
 
@@ -97,7 +103,7 @@ int main()
 	//---------------------------------
 	mouseCamera = new MouseCamera(*keyboardHandler, *mouseHandler);
 	followCamera = new Follow3rdPersonCamera(bird);
-	camera = followCamera;
+	camera = mouseCamera;
 
 	// Main loop
 	//---------------------------------	
@@ -118,7 +124,7 @@ int main()
 
 		// Action
 		bird.tick(currentFrame, deltaTime);
-		bird2.setPosition(bird.getDestination());
+		bird2.setPosition(bird3.getDestination());
 		bird3.tick(currentFrame, deltaTime);
 
 		// Camera
@@ -142,6 +148,7 @@ int main()
 	delete sea;
 	delete skyBox;
 	delete followBehavior;
+	delete randomBehavior;
 	return 0;
 }
 

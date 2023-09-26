@@ -37,10 +37,6 @@ Bird::Bird(glm::vec3 position, glm::vec3 direction) : Object(position, direction
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
 	shader = new Shader("shaders/birdShader.vs", "shaders/birdShader.fs");
-
-	float destX = (float)(rand() % (int)fieldSize.x);
-	float destZ = (float)(rand() % (int)fieldSize.y);
-	destination = glm::vec3(destX, 3, destZ);
 }
 
 Bird::~Bird() {
@@ -82,18 +78,6 @@ void Bird::render(
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
-}
-
-void Bird::think(long timeDeltaMsec, long long timeAbsoluteMsec)
-{
-	if (timeAbsoluteMsec - lastTick > timeBetweenDirectionChanges)
-	{
-		float destX = (float)(rand() % (int)fieldSize.x);
-		float destZ = (float)(rand() % (int)fieldSize.y);
-		destination = glm::vec3(destX, 3, destZ);
-		std::cout << "\nBird flies to: " << destination.x << ", " << destination.y;
-		lastTick = timeAbsoluteMsec;
-	}
 }
 
 void Bird::tick(float time, float timeDelta)

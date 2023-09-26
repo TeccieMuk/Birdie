@@ -95,6 +95,10 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>lib /NOLOGO /OUT:"$(TargetPath).lib" "$(ProjectDir)$(IntDir)*.obj"</Command>
+      <Message>Create static lib for testing</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -111,6 +115,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>lib /NOLOGO /OUT:"$(TargetPath).lib" "$(ProjectDir)$(IntDir)*.obj"</Command>
+      <Message>Create static lib for testing</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -125,6 +133,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>lib /NOLOGO /OUT:"$(TargetPath).lib" "$(ProjectDir)$(IntDir)*.obj"</Command>
+      <Message>Create static lib for testing</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -141,10 +153,16 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>lib /NOLOGO /OUT:"$(TargetPath).lib" "$(ProjectDir)$(IntDir)*.obj"</Command>
+      <Message>Create static lib for testing</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\GLAD\src\glad.c" />
     <ClCompile Include="source\behaviors\FollowBehavior.cpp" />
+    <ClCompile Include="source\behaviors\GoToRandomPointBehavior.cpp" />
+    <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\objects\bird.cpp" />
     <ClCompile Include="source\logic\Brain.cpp" />
     <ClCompile Include="header\behaviors\FollowBehavior.h">
@@ -153,7 +171,6 @@
     <ClCompile Include="source\utility\KeyboardHandler.cpp" />
     <ClCompile Include="source\camera\MouseCamera.cpp" />
     <ClCompile Include="source\camera\Follow3rdPersonCamera.cpp" />
-    <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\utility\MouseHandler.cpp" />
     <ClCompile Include="source\objects\Sea.cpp" />
     <ClCompile Include="source\utility\shader.cpp" />
@@ -162,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\behaviors\BehaviorTarget.h" />
+    <ClInclude Include="header\behaviors\GoToRandomPointBehavior.h" />
     <ClInclude Include="header\objects\bird.h" />
     <ClInclude Include="header\logic\Brain.h" />
     <ClInclude Include="header\camera\Camera.h" />

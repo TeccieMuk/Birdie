@@ -7,12 +7,11 @@
 #include "objects/Object.h"
 #include "behaviors/BehaviorTarget.h"
 
-class Bird : public ThinkThing, public Object, public BehaviorTarget
+class Bird : public Object, public BehaviorTarget
 {
 public:
 	Bird(glm::vec3 position, glm::vec3 direction);
 	~Bird();
-	void think(long timeDeltaMsec, long long timeAbsoluteMsec) override;
 	void tick(float time, float deltaTime);
 	void render(
 		float time,
@@ -32,11 +31,8 @@ private:
 	unsigned int vao;
 	unsigned int ebo;
 	Shader* shader = nullptr;
-	long long lastTick = 0;
-	long timeBetweenDirectionChanges = 10000;
 	float speed = 0.7f;
 	float rotation = 0;
 	float rotationSpeed = 0.3f;
 	float angle = 0.0f;
-	glm::vec2 fieldSize = glm::vec2(20, 20);
 };

@@ -93,6 +93,9 @@
     <ClCompile Include="source\behaviors\FollowBehavior.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\behaviors\GoToRandomPointBehavior.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\libraries\stb_image.h">
@@ -136,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="header\behaviors\BehaviorTarget.h">
       <Filter>Header Files\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="header\behaviors\GoToRandomPointBehavior.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
