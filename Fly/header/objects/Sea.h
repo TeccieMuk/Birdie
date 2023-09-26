@@ -1,6 +1,6 @@
 #pragma once
-#include "shader.h"
-#include "Camera.h"
+#include "utility/shader.h"
+#include "camera/Camera.h"
 
 const unsigned int NR_WAVES = 100;
 const float DISTANCE_APART = 1;

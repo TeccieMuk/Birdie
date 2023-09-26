@@ -1,4 +1,4 @@
-#include "mousecamera.h"
+#include "camera/mousecamera.h"
 #include <glm/ext/matrix_transform.hpp>
 #include <functional>
 

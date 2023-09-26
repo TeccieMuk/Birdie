@@ -118,6 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>./header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,51 +144,51 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\GLAD\src\glad.c" />
-    <ClCompile Include="bird.cpp" />
-    <ClCompile Include="Brain.cpp" />
-    <ClCompile Include="FollowBehavior.h">
+    <ClCompile Include="source\objects\bird.cpp" />
+    <ClCompile Include="source\logic\Brain.cpp" />
+    <ClCompile Include="header\behavior\FollowBehavior.h">
       <FileType>CppHeader</FileType>
     </ClCompile>
-    <ClCompile Include="KeyboardHandler.cpp" />
-    <ClCompile Include="MouseCamera.cpp" />
-    <ClCompile Include="Follow3rdPersonCamera.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MouseHandler.cpp" />
-    <ClCompile Include="Sea.cpp" />
-    <ClCompile Include="shader.cpp" />
-    <ClCompile Include="SkyBox.cpp" />
-    <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="source\utility\KeyboardHandler.cpp" />
+    <ClCompile Include="source\camera\MouseCamera.cpp" />
+    <ClCompile Include="source\camera\Follow3rdPersonCamera.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\utility\MouseHandler.cpp" />
+    <ClCompile Include="source\objects\Sea.cpp" />
+    <ClCompile Include="source\utility\shader.cpp" />
+    <ClCompile Include="source\objects\SkyBox.cpp" />
+    <ClCompile Include="source\libraries\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bird.h" />
-    <ClInclude Include="Brain.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="KeyboardHandler.h" />
-    <ClInclude Include="MouseCamera.h" />
-    <ClInclude Include="Follow3rdPersonCamera.h" />
-    <ClInclude Include="MouseHandler.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="Sea.h" />
-    <ClInclude Include="shader.h" />
-    <ClInclude Include="SkyBox.h" />
-    <ClInclude Include="stb_image.h" />
-    <ClInclude Include="ThinkThing.h" />
+    <ClInclude Include="header\objects\bird.h" />
+    <ClInclude Include="header\logic\Brain.h" />
+    <ClInclude Include="header\camera\Camera.h" />
+    <ClInclude Include="header\utility\KeyboardHandler.h" />
+    <ClInclude Include="header\camera\MouseCamera.h" />
+    <ClInclude Include="header\camera\Follow3rdPersonCamera.h" />
+    <ClInclude Include="header\utility\MouseHandler.h" />
+    <ClInclude Include="header\objects\Object.h" />
+    <ClInclude Include="header\objects\Sea.h" />
+    <ClInclude Include="header\utility\shader.h" />
+    <ClInclude Include="header\objects\SkyBox.h" />
+    <ClInclude Include="header\libraries\stb_image.h" />
+    <ClInclude Include="header\logic\ThinkThing.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="birdShader.fs" />
-    <None Include="birdShader.vs" />
-    <None Include="shader.fs" />
-    <None Include="shader.vs" />
-    <None Include="skyboxShader.fs" />
-    <None Include="skyboxShader.vs" />
+    <None Include="shaders\birdShader.fs" />
+    <None Include="shaders\birdShader.vs" />
+    <None Include="shaders\shader.fs" />
+    <None Include="shaders\shader.vs" />
+    <None Include="shaders\skyboxShader.fs" />
+    <None Include="shaders\skyboxShader.vs" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="back.jpg" />
-    <Image Include="bottom.jpg" />
-    <Image Include="front.jpg" />
-    <Image Include="left.jpg" />
-    <Image Include="right.jpg" />
-    <Image Include="top.jpg" />
+    <Image Include="resources\back.jpg" />
+    <Image Include="resources\bottom.jpg" />
+    <Image Include="resources\front.jpg" />
+    <Image Include="resources\left.jpg" />
+    <Image Include="resources\right.jpg" />
+    <Image Include="resources\top.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

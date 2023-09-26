@@ -1,4 +1,4 @@
-#include "Bird.h"
+#include "objects/Bird.h"
 #include <glad/glad.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -36,7 +36,7 @@ Bird::Bird(glm::vec3 position, glm::vec3 direction) : Object(position, direction
 	glEnableVertexAttribArray(1);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
-	shader = new Shader("birdShader.vs", "birdShader.fs");
+	shader = new Shader("shaders/birdShader.vs", "shaders/birdShader.fs");
 
 	float destX = (float)(rand() % (int)fieldSize.x);
 	float destZ = (float)(rand() % (int)fieldSize.y);

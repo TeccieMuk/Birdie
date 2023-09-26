@@ -1,8 +1,8 @@
 #pragma once
 #include <vector>
 #include <string>
-#include "shader.h"
-#include "Camera.h"
+#include "utility/shader.h"
+#include "camera/Camera.h"
 
 const float SKYBOX_SIZE = 10;
 

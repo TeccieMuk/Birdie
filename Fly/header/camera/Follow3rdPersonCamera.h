@@ -1,6 +1,6 @@
 #pragma once
-#include "Object.h"
-#include "Camera.h"
+#include "objects/Object.h"
+#include "camera/Camera.h"
 
 class Follow3rdPersonCamera: public Camera
 {

@@ -1,4 +1,4 @@
-#include "Brain.h"
+#include "logic/Brain.h"
 #include <chrono>
 #include <iostream>
 

@@ -1,5 +1,5 @@
 #pragma once
-#include "ThinkThing.h"
+#include "logic/ThinkThing.h"
 
 class FollowBehavior : public ThinkThing
 {

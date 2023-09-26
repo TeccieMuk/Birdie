@@ -1,10 +1,10 @@
 #pragma once
-#include "shader.h"
+#include "utility/shader.h"
 #include <glm/fwd.hpp>
 #include <glm/glm.hpp>
-#include "camera.h"
-#include "ThinkThing.h"
-#include "Object.h"
+#include "camera/Camera.h"
+#include "logic/ThinkThing.h"
+#include "objects/Object.h"
 
 class Bird : public ThinkThing, public Object
 {

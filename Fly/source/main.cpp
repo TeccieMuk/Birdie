@@ -1,18 +1,18 @@
-#include "shader.h"
+#include "utility/shader.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include "camera.h"
-#include "bird.h"
-#include "Brain.h"
-#include "Follow3rdPersonCamera.h"
-#include "stb_image.h"
-#include "MouseCamera.h"
-#include "Sea.h"
-#include "SkyBox.h"
+#include "camera/camera.h"
+#include "objects/bird.h"
+#include "logic/Brain.h"
+#include "camera/Follow3rdPersonCamera.h"
+#include "libraries/stb_image.h"
+#include "camera/MouseCamera.h"
+#include "objects/Sea.h"
+#include "objects/SkyBox.h"
 using namespace std;
 
 

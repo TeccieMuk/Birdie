@@ -1,9 +1,9 @@
 #pragma once
-#include "Camera.h"
+#include "camera/Camera.h"
 #include <glm/fwd.hpp>
 #include <glm/glm.hpp>
-#include "KeyboardHandler.h"
-#include "MouseHandler.h"
+#include "utility/KeyboardHandler.h"
+#include "utility/MouseHandler.h"
 
 class MouseCamera: public Camera
 {

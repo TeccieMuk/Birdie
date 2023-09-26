@@ -51,124 +51,124 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\GLAD\src\glad.c">
       <Filter>Source Files\Libraries</Filter>
     </ClCompile>
-    <ClCompile Include="stb_image.cpp">
+    <ClCompile Include="source\libraries\stb_image.cpp">
       <Filter>Source Files\Libraries</Filter>
     </ClCompile>
-    <ClCompile Include="MouseCamera.cpp">
+    <ClCompile Include="source\camera\MouseCamera.cpp">
       <Filter>Source Files\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="Follow3rdPersonCamera.cpp">
+    <ClCompile Include="source\camera\Follow3rdPersonCamera.cpp">
       <Filter>Source Files\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="Brain.cpp">
+    <ClCompile Include="source\logic\Brain.cpp">
       <Filter>Source Files\Logic</Filter>
     </ClCompile>
-    <ClCompile Include="KeyboardHandler.cpp">
+    <ClCompile Include="source\utility\KeyboardHandler.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="shader.cpp">
+    <ClCompile Include="source\utility\shader.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="bird.cpp">
+    <ClCompile Include="source\objects\bird.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="MouseHandler.cpp">
+    <ClCompile Include="source\utility\MouseHandler.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="Sea.cpp">
+    <ClCompile Include="source\objects\Sea.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="SkyBox.cpp">
+    <ClCompile Include="source\objects\SkyBox.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="FollowBehavior.h">
+    <ClCompile Include="header\behavior\FollowBehavior.h">
       <Filter>Header Files\Behaviors</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stb_image.h">
+    <ClInclude Include="header\libraries\stb_image.h">
       <Filter>Header Files\Libraries</Filter>
     </ClInclude>
-    <ClInclude Include="MouseCamera.h">
+    <ClInclude Include="header\camera\MouseCamera.h">
       <Filter>Header Files\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="Follow3rdPersonCamera.h">
+    <ClInclude Include="header\camera\Follow3rdPersonCamera.h">
       <Filter>Header Files\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
+    <ClInclude Include="header\camera\Camera.h">
       <Filter>Header Files\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="Brain.h">
+    <ClInclude Include="header\logic\Brain.h">
       <Filter>Header Files\Logic</Filter>
     </ClInclude>
-    <ClInclude Include="ThinkThing.h">
+    <ClInclude Include="header\logic\ThinkThing.h">
       <Filter>Header Files\Logic</Filter>
     </ClInclude>
-    <ClInclude Include="KeyboardHandler.h">
+    <ClInclude Include="header\utility\KeyboardHandler.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="shader.h">
+    <ClInclude Include="header\utility\shader.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="bird.h">
+    <ClInclude Include="header\objects\bird.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
+    <ClInclude Include="header\objects\Object.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="MouseHandler.h">
+    <ClInclude Include="header\utility\MouseHandler.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="Sea.h">
+    <ClInclude Include="header\objects\Sea.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="SkyBox.h">
+    <ClInclude Include="header\objects\SkyBox.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.vs">
+    <None Include="shaders\shader.vs">
       <Filter>shaders</Filter>
     </None>
-    <None Include="shader.fs">
+    <None Include="shaders\shader.fs">
       <Filter>shaders</Filter>
     </None>
-    <None Include="birdShader.vs">
+    <None Include="shaders\birdShader.vs">
       <Filter>shaders</Filter>
     </None>
-    <None Include="birdShader.fs">
+    <None Include="shaders\birdShader.fs">
       <Filter>shaders</Filter>
     </None>
-    <None Include="skyboxShader.fs">
+    <None Include="shaders\skyboxShader.fs">
       <Filter>shaders</Filter>
     </None>
-    <None Include="skyboxShader.vs">
+    <None Include="shaders\skyboxShader.vs">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="back.jpg">
+    <Image Include="resources\back.jpg">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="bottom.jpg">
+    <Image Include="resources\bottom.jpg">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="front.jpg">
+    <Image Include="resources\front.jpg">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="left.jpg">
+    <Image Include="resources\left.jpg">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="right.jpg">
+    <Image Include="resources\right.jpg">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="top.jpg">
+    <Image Include="resources\top.jpg">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

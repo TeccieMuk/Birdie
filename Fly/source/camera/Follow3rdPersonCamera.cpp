@@ -1,4 +1,4 @@
-#include "Follow3rdPersonCamera.h"
+#include "camera/Follow3rdPersonCamera.h"
 #include <glm/ext/matrix_transform.hpp>
 #include <glm/glm.hpp>
 #include <iostream>

@@ -1,4 +1,4 @@
-#include "MouseHandler.h"
+#include "utility/MouseHandler.h"
 
 void MouseHandler::addMouseCoordCallback(std::function<void(float, float)> callback)
 {

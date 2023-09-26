@@ -1,19 +1,19 @@
-#include "SkyBox.h"
-#include "stb_image.h"
+#include "objects/SkyBox.h"
+#include "libraries/stb_image.h"
 
 SkyBox::SkyBox()
 {
 	std::vector<std::string> faces
 	{
-		"right.jpg",
-		"left.jpg",
-		"top.jpg",
-		"bottom.jpg",
-		"front.jpg",
-		"back.jpg"
+		"resources/right.jpg",
+		"resources/left.jpg",
+		"resources/top.jpg",
+		"resources/bottom.jpg",
+		"resources/front.jpg",
+		"resources/back.jpg"
 	};
 	cubemapTexture = loadCubemap(faces);
-	shader = new Shader("skyboxShader.vs", "skyboxShader.fs");
+	shader = new Shader("shaders/skyboxShader.vs", "shaders/skyboxShader.fs");
 	float skyboxVertices[] = {
 		// positions          
 		-SKYBOX_SIZE,  SKYBOX_SIZE, -SKYBOX_SIZE,

@@ -1,4 +1,4 @@
-#include "sea.h"
+#include "objects/sea.h"
 #include <stdlib.h>
 #include <glad/glad.h>
 #include <glm/gtc/matrix_transform.hpp>
@@ -6,7 +6,7 @@
 Sea::Sea()
 {
 	model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-	shader = new Shader("shader.vs", "shader.fs");
+	shader = new Shader("shaders/shader.vs", "shaders/shader.fs");
 
 	float centerOffset = (NR_WAVES * DISTANCE_APART) / 2;
 	for (int y = 0; y < NR_WAVES; y++)
