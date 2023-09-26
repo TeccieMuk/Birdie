@@ -78,8 +78,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\..\GLAD\include;..\..\glfw-3.3.8.bin.WIN64\include;C:\Repo\cppstuff\Waves\glm;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\glfw-3.3.8.bin.WIN64\lib-vc2022;..\..\glfw-3.3.8.bin.WIN64\include\GLFW;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\GLAD\include;..\glfw-3.3.8.bin.WIN64\include;..\glm;$(IncludePath)</IncludePath>
+    <LibraryPath>..\glfw-3.3.8.bin.WIN64\lib-vc2022;..\glfw-3.3.8.bin.WIN64\include\GLFW;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -143,7 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\GLAD\src\glad.c" />
+    <ClCompile Include="..\GLAD\src\glad.c" />
     <ClCompile Include="source\objects\bird.cpp" />
     <ClCompile Include="source\logic\Brain.cpp" />
     <ClCompile Include="header\behavior\FollowBehavior.h">
@@ -175,20 +175,44 @@
     <ClInclude Include="header\logic\ThinkThing.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="shaders\birdShader.fs" />
-    <None Include="shaders\birdShader.vs" />
-    <None Include="shaders\shader.fs" />
-    <None Include="shaders\shader.vs" />
-    <None Include="shaders\skyboxShader.fs" />
-    <None Include="shaders\skyboxShader.vs" />
+    <None Include="shaders\birdShader.fs">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="shaders\birdShader.vs">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="shaders\shader.fs">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="shaders\shader.vs">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="shaders\skyboxShader.fs">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="shaders\skyboxShader.vs">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="resources\back.jpg" />
-    <Image Include="resources\bottom.jpg" />
-    <Image Include="resources\front.jpg" />
-    <Image Include="resources\left.jpg" />
-    <Image Include="resources\right.jpg" />
-    <Image Include="resources\top.jpg" />
+    <Image Include="resources\back.jpg">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="resources\bottom.jpg">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="resources\front.jpg">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="resources\left.jpg">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="resources\right.jpg">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="resources\top.jpg">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

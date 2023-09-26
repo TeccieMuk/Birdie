@@ -22,7 +22,6 @@ glm::mat4 Follow3rdPersonCamera::getView(float time, float timeDelta)
 	// Move own looking direction closer to target direction
 	glm::vec3 cross = glm::cross(targetDirection, lookingDirection);
 	float dotReversed = (1 - glm::dot(targetDirection, lookingDirection)) * 6;
-	std::cout << "\n" << dotReversed;
 	float rotation = 0;
 	if (cross.y < 0)
 	{

@@ -54,9 +54,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\GLAD\src\glad.c">
-      <Filter>Source Files\Libraries</Filter>
-    </ClCompile>
     <ClCompile Include="source\libraries\stb_image.cpp">
       <Filter>Source Files\Libraries</Filter>
     </ClCompile>
@@ -89,6 +86,9 @@
     </ClCompile>
     <ClCompile Include="header\behavior\FollowBehavior.h">
       <Filter>Header Files\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GLAD\src\glad.c">
+      <Filter>Source Files\Libraries</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
