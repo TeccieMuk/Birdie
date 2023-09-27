@@ -82,18 +82,49 @@ void Bird::render(
 
 void Bird::tick(float time, float timeDelta)
 {
-	glm::vec3 towardsNotNormalized = destination - position;
-	glm::vec3 towardsDestination = normalize(towardsNotNormalized);
-	glm::vec3 cross = glm::cross(towardsDestination, direction);
+	// You are on an intercept path if horizontal component of the direction towards
+	// the target does not change.
+	// Take the cross product of the direction towards destination and the y up axis to get the
+	// perpendicular cross.Compare this to the previous one, and use the cross product to
+	// determine which way to rotate.
 
-	if (cross.y < 0)
+	glm::vec3 towardsNotNormalized = destination - position;
+	glm::vec3 towardsNormalized = glm::normalize(towardsNotNormalized);
+
+	// Check whether target is behind you.
+	float dot = glm::dot(direction, towardsNormalized);
+	glm::vec3 horizontalCross = glm::cross(towardsNotNormalized, glm::vec3(0, 1, 0));
+	if (dot > 0)
 	{
-		rotation += rotationSpeed * timeDelta;
+		glm::vec3 difference = horizontalCross - previousCrossFromDirection;
+		glm::vec3 rotationCross = glm::cross(difference, previousCrossFromDirection);
+		if (rotationCross.y < 0)
+		{
+			rotation += rotationSpeed * timeDelta;
+		}
+		else if (rotationCross.y > 0)
+		{
+			rotation -= rotationSpeed * timeDelta;
+		}
 	}
-	else if (cross.y > 0)
+	// If we're behind the target, just turn into direction
+	else
 	{
-		rotation -= rotationSpeed * timeDelta;
+		// Check which direction to turn...
+		glm::vec3 cross = glm::cross(towardsNormalized, direction);
+
+		if (cross.y < 0)
+		{
+			rotation += rotationSpeed * timeDelta;
+		}
+		else if (cross.y > 0)
+		{
+			rotation -= rotationSpeed * timeDelta;
+		}
 	}
+
+	previousCrossFromDirection = horizontalCross;
+
 	glm::mat4 rotateToTarget = glm::mat4(1.0f);
 	rotateToTarget = glm::rotate(rotateToTarget, rotation, glm::vec3(0.0f, 1.0f, 0.0f));
 	glm::vec4 rotationVector = glm::vec4(-1, 0, -1, 0);

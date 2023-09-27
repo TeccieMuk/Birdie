@@ -24,9 +24,11 @@ public:
 public:
 	glm::vec3 getDestination() { return destination; }
 	void setDestination(glm::vec3 destination) override { this->destination = destination; }
+	void setSpeed(float speed) { this->speed = speed; }
 
 private:
 	glm::vec3 destination = glm::vec3(0, 2, 0);
+	glm::vec3 previousCrossFromDirection = glm::vec3(0, 2, 0);
 	unsigned int vbo;
 	unsigned int vao;
 	unsigned int ebo;

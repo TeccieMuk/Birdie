@@ -11,6 +11,9 @@ public:
 
 	void think(long timeDeltaMsec, long long timeAbsoluteMsec) override;
 	void setBehaviorTarget(BehaviorTarget* target) { behaviorTarget = target; }
+	void setTimeBetweenDirectionChanges(long time) {
+		this->timeBetweenDirectionChanges = time;
+	}
 
 private:
 	BehaviorTarget* behaviorTarget = nullptr;

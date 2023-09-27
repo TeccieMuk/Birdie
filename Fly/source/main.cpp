@@ -89,10 +89,11 @@ int main()
 	FollowBehavior* followBehavior = new FollowBehavior();
 	followBehavior->setBehaviorTarget(&bird3);
 	followBehavior->setFollowTarget(&bird);
-	followBehavior->setOffset(glm::vec3(0.0f, 0, 0.0f));
+	followBehavior->setOffset(glm::vec3(1, 0, 1));
 	brain->addThinkThing(followBehavior);
 
 	GoToRandomPointBehavior* randomBehavior = new GoToRandomPointBehavior();
+	randomBehavior->setTimeBetweenDirectionChanges(25000);
 	randomBehavior->setBehaviorTarget(&bird);
 	brain->addThinkThing(randomBehavior);
 	

@@ -12,7 +12,7 @@ public:
 	void think(long timeDeltaMsec, long long timeAbsoluteMsec) override;
 	void setFollowTarget(Object* object) { followTarget = object; }
 	void setBehaviorTarget(BehaviorTarget* target) { behaviorTarget = target; }
-	void setOffset(glm::vec3 offset) { offset = offset; }
+	void setOffset(glm::vec3 offset) {this->offset = offset; }
 
 private:
 	Object* followTarget = nullptr;
