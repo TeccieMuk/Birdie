@@ -96,6 +96,9 @@
     <ClCompile Include="source\behaviors\GoToRandomPointBehavior.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\objects\Box.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\libraries\stb_image.h">
@@ -143,6 +146,9 @@
     <ClInclude Include="header\behaviors\GoToRandomPointBehavior.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="header\objects\Box.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\shader.vs">
@@ -163,6 +169,8 @@
     <None Include="shaders\skyboxShader.vs">
       <Filter>shaders</Filter>
     </None>
+    <None Include="shaders\basicLightingShader.fs" />
+    <None Include="shaders\normalShader.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\back.jpg">

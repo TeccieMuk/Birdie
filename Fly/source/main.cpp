@@ -15,6 +15,7 @@
 #include "objects/SkyBox.h"
 #include <behaviors/FollowBehavior.h>
 #include <behaviors/GoToRandomPointBehavior.h>
+#include <objects/Box.h>
 using namespace std;
 
 
@@ -83,11 +84,13 @@ int main()
 	//---------------------------------
 	Brain* brain = new Brain();
 	Bird bird = Bird(glm::vec3(0, 2, 0), glm::vec3(1, 0, 0));
-	Bird bird2 = Bird(glm::vec3(0, 2, 0), glm::vec3(1, 0, 0));
-	Bird bird3 = Bird(glm::vec3(5, 2, 5), glm::vec3(1, 0, 0));
+	Bird bird2 = Bird(glm::vec3(5, 2, 5), glm::vec3(1, 0, 0));
+	bird2.setSpeed(0.8f);
+	Box box1 = Box(glm::vec3(0, 1, 0), glm::vec3(1, 0, 0));
+	Box box2 = Box(glm::vec3(0, 1, 0), glm::vec3(1, 0, 0));
 
 	FollowBehavior* followBehavior = new FollowBehavior();
-	followBehavior->setBehaviorTarget(&bird3);
+	followBehavior->setBehaviorTarget(&bird2);
 	followBehavior->setFollowTarget(&bird);
 	followBehavior->setOffset(glm::vec3(1, 0, 1));
 	brain->addThinkThing(followBehavior);
@@ -125,8 +128,9 @@ int main()
 
 		// Action
 		bird.tick(currentFrame, deltaTime);
-		bird2.setPosition(bird3.getDestination());
-		bird3.tick(currentFrame, deltaTime);
+		bird2.tick(currentFrame, deltaTime);
+		box1.setPosition(bird.getDestination());
+		box2.setPosition(bird2.getDestination());
 
 		// Camera
 		glm::mat4 view = camera->getView(currentFrame, deltaTime);
@@ -134,7 +138,8 @@ int main()
 		sea->render(currentFrame, view, projection, *camera, lightPos, lightColor);
 		bird.render(currentFrame, view, projection, *camera, lightPos, lightColor);
 		bird2.render(currentFrame, view, projection, *camera, lightPos, lightColor);
-		bird3.render(currentFrame, view, projection, *camera, lightPos, lightColor);
+		box1.render(currentFrame, view, projection, *camera, lightPos, lightColor);
+		box2.render(currentFrame, view, projection, *camera, lightPos, lightColor);
 
 		// GLFW buffers and IO
 		glfwSwapBuffers(window);

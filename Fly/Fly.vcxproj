@@ -168,6 +168,7 @@
     <ClCompile Include="header\behaviors\FollowBehavior.h">
       <FileType>CppHeader</FileType>
     </ClCompile>
+    <ClCompile Include="source\objects\Box.cpp" />
     <ClCompile Include="source\utility\KeyboardHandler.cpp" />
     <ClCompile Include="source\camera\MouseCamera.cpp" />
     <ClCompile Include="source\camera\Follow3rdPersonCamera.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="header\objects\bird.h" />
     <ClInclude Include="header\logic\Brain.h" />
     <ClInclude Include="header\camera\Camera.h" />
+    <ClInclude Include="header\objects\Box.h" />
     <ClInclude Include="header\utility\KeyboardHandler.h" />
     <ClInclude Include="header\camera\MouseCamera.h" />
     <ClInclude Include="header\camera\Follow3rdPersonCamera.h" />
@@ -199,6 +201,12 @@
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="shaders\birdShader.vs">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="shaders\normalShader.vs">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="shaders\basicLightingShader.fs">
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="shaders\shader.fs">
